@@ -2,23 +2,21 @@
 using namespace std;
 
 int main(){
-    int n; // input a number
-    int maximum=0; // maximum
-    int minimum=0; // minimum
-    int greater=0; // the number of numbers greater or equal to 0
-    int smaller=0; // the nubmer of negative numbers
+    string s;
+    string output[100];
+    cin >> s;
 
-    cout << "input a number: ";
-    cin >> n;
+    int i = -1;
 
-    while (n!=-9999){
-        if (n>maximum) maximum=n;
-        if (n<minimum) minimum=n;
-        if (n>=0) greater++;
-        else smaller++;
-        cin >> n;
+    while (s!="-9999"){
+        i++;
+        output[i] = s;
+        cin >> s;
     }
 
-    cout << maximum << "," << minimum << "," << greater << "," << smaller << endl;
+    while (i>=0){
+        cout << output[i] << " ";
+        i--;
+    }
     return 0;
 }
