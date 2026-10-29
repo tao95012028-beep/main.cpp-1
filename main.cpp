@@ -1,24 +1,17 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int main(){
-    int n; // input a number
-    int maximum=0; // maximum
-    int minimum=0; // minimum
-    int greater=0; // the number of numbers greater or equal to 0
-    int smaller=0; // the nubmer of negative numbers
+    string s;
+    cin >> s;
+    //coout << s << endl;
+    int n = s.length();
 
-    cout << "input a number: ";
-    cin >> n;
-
-    while (n!=-9999){
-        if (n>maximum) maximum=n;
-        if (n<minimum) minimum=n;
-        if (n>=0) greater++;
-        else smaller++;
-        cin >> n;
-    }
-
-    cout << maximum << "," << minimum << "," << greater << "," << smaller << endl;
+    for (int i = 0; i <n; i++){
+        for (int k=1; k<=n-i; k++){
+            cout << s.substr(i,k) << " ";
+        }
+    } 
     return 0;
 }
